@@ -21,7 +21,7 @@ exports.login = async(req, res, next) => {
     try {
         let { email, password } = req.body
         let customer = await User.findOne({ where: { email } })
-        if (!customer || !compare(password, hashPassword)) return next({ name: 'LOGIN_ERROR' })
+        if (!customer || !compare(password, customer.password)) return next({ name: 'LOGIN_ERROR' })
         let token = generateToken(customer)
         res.status(200).json(token)
 
