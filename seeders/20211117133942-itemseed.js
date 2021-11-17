@@ -1,6 +1,6 @@
 'use strict';
 // let baseUrl = 'http://localhost:3000/images/'
-let baseUrl = 'redflag-maul.herokuapp.com/images'
+let baseUrl = 'https://redflag-maul.herokuapp.com/images'
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('Items', 
